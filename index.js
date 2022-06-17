@@ -39,13 +39,24 @@ const getStockStateByColor = async (browser, url) => {
   console.log(`${url.color}取得開始`);
   const page = await browser.newPage();
   await page.goto(url.url);
-  var element = await page.waitForSelector(
-    "div.mainbox:nth-child(1) > dl:nth-child(2) > dt:nth-child(1)"
-  );
-  var text = await page.evaluate((element) => element.textContent, element);
-  console.log("===========");
-  console.log(`${url.color}取得完了✨`);
-  console.log(text.replace(/\s+/g, ""));
-  console.log("===========");
+  await page
+    .waitForSelector(
+      "div.mainbox:nth-child(1) > dl:nth-child(2) > dt:nth-child(1)"
+    )
+    .then(async (element) => {
+      var text = await page
+        .evaluate((element) => element.textContent, element)
+        .catch((err) => {
+          reject("evaluate err!!");
+        });
+      console.log("===========");
+      console.log(`${url.color}取得完了✨`);
+      console.log(text.replace(/\s+/g, ""));
+      console.log("===========");
+      resolve("succes!!");
+    })
+    .catch((err) => {
+      return "err!!";
+    });
   page.close();
 };
