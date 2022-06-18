@@ -1,13 +1,16 @@
 {
-  "name": "ds4-stock-checker",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "start": "node index.js",
-  },
-  "dependencies": {
-    "puppeteer": "^14.4.1"
-  }
+    "name": "ds4-stock-checker",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "puppeteer": "^14.4.1"
+    },
+    "devDependencies": {
+        "prettier": "2.7.1"
+    }
 }
