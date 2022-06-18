@@ -1,22 +1,26 @@
-const jw = {
-    baseUrl: 'https://joshinweb.jp/game/26171/',
-    cts: {
-        black: '4948872414203.html',
-        white: '4948872414340.html',
-        red: '4948872414296.html',
-        blue: '4948872414562.html',
-        gold: '4948872414357.html',
-        cooper: '4948872414753.html',
+export const items = [
+    {
+        color: 'black',
+        url: 'https://joshinweb.jp/game/26171/4948872414203.html',
     },
-    getUrl: (ct) => {
-        return { url: `${jw.baseUrl}${jw.cts[ct]}`, color: ct }
+    {
+        color: 'white',
+        url: 'https://joshinweb.jp/game/26171/4948872414340.html',
     },
-}
-export const urls = [
-    jw.getUrl('black'),
-    jw.getUrl('white'),
-    jw.getUrl('red'),
-    jw.getUrl('blue'),
-    jw.getUrl('gold'),
-    jw.getUrl('cooper'),
+    {
+        color: 'red',
+        url: 'https://joshinweb.jp/game/26171/4948872414296.html',
+    },
+    {
+        color: 'blue',
+        url: 'https://joshinweb.jp/game/26171/4948872414562.html',
+    },
+    // {
+    //     color: 'gold',
+    //     url: 'https://joshinweb.jp/game/26171/4948872414357.html',
+    // },
+    // {
+    //     color: 'cooper',
+    //     url: 'https://joshinweb.jp/game/26171/4948872414753.html',
+    // },
 ]
